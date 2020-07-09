@@ -78,7 +78,7 @@ namespace StoreManagement
             }
             f.MdiParent = this;
             f.Show();
-            f.WindowState = FormWindowState.Maximized;
+            //f.WindowState = FormWindowState.Maximized;
            
         }
     }

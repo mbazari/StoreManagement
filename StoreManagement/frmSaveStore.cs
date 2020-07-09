@@ -51,24 +51,26 @@ namespace StoreManagement
                 MessageBox.Show("نام کالا را وارد نمایید.");
                 return;
             }
+            using (StoreDBEntities db = new StoreDBEntities())
+            {
+                if (edit)
+                {
+                    var store = db.Stores.Find(id);
+                    store.Name = textBox2.Text;
+                    store.Address = richTextBox1.Text;
 
-            if (edit)
-            {
-                StoreDBEntities db = new StoreDBEntities();
-                var store = db.Stores.Find(id);
-                store.Name = textBox2.Text;
-                store.Address = richTextBox1.Text;
+                }
+                else
+                {
+                    var store = new Store();
+                    store.Name = textBox2.Text;
+                    store.Address = richTextBox1.Text;
+                    db.Stores.Add(store);
+                }
                 db.SaveChanges();
             }
-            else
-            {
-                StoreDBEntities db = new StoreDBEntities();
-                var store = new Store();
-                store.Name = textBox2.Text;
-                store.Address = richTextBox1.Text;
-                db.Stores.Add(store);
-                db.SaveChanges();
-            }
+            
+            
 
             MessageBox.Show("تغییرات ثیت شده است.");
 

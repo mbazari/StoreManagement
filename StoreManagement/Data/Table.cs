@@ -12,21 +12,12 @@ namespace StoreManagement.Data
     using System;
     using System.Collections.Generic;
     
-    public partial class Store
+    public partial class Table
     {
-        public Store()
-        {
-            this.Documents = new HashSet<Document>();
-            this.Kalas = new HashSet<Kala>();
-            this.Tables = new HashSet<Table>();
-        }
-    
         public int Id { get; set; }
         public string Name { get; set; }
-        public string Address { get; set; }
+        public int StoreId { get; set; }
     
-        public virtual ICollection<Document> Documents { get; set; }
-        public virtual ICollection<Kala> Kalas { get; set; }
-        public virtual ICollection<Table> Tables { get; set; }
+        public virtual Store Store { get; set; }
     }
 }

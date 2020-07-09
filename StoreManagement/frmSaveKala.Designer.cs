@@ -84,7 +84,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(322, 19);
+            this.label3.Location = new System.Drawing.Point(285, 20);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(35, 13);
             this.label3.TabIndex = 5;
@@ -109,7 +109,7 @@
             this.label4.TabIndex = 7;
             this.label4.Text = "نام انبار:";
             // 
-            // SaveKala
+            // frmSaveKala
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -122,7 +122,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
-            this.Name = "SaveKala";
+            this.Name = "frmSaveKala";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Text = "SaveKala";
             this.Load += new System.EventHandler(this.SaveKala_Load);

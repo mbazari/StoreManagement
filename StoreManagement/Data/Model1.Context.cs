@@ -26,9 +26,10 @@ namespace StoreManagement.Data
         }
     
         public DbSet<Document> Documents { get; set; }
-        public DbSet<DocumentItem> DocumentItems { get; set; }
         public DbSet<Kala> Kalas { get; set; }
         public DbSet<Store> Stores { get; set; }
+        public DbSet<Table> Tables { get; set; }
+        public DbSet<DocumentItem> DocumentItems { get; set; }
         public DbSet<User> Users { get; set; }
     }
 }

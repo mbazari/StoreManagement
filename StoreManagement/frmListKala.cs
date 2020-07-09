@@ -26,26 +26,26 @@ namespace StoreManagement
            
             if (e.ColumnIndex == dataGridView1.Columns["DeleteKala"].Index)
             {
-                 var data = (Kala)dataGridView1.Rows[e.RowIndex].DataBoundItem;
+                 var data = (KalaInfo)dataGridView1.Rows[e.RowIndex].DataBoundItem;
 
                 StoreDBEntities db = new StoreDBEntities();
 
-                if (db.DocumentItems.Any(a => a.KalaId == data.Id))
+                if (db.DocumentItems.Any(a => a.KalaId == data.KalaId))
                 {
                     MessageBox.Show("انبار در سند استفاده شده است.");
                     return;
                 }
-
-                db.Kalas.Remove(data);
+                var t = db.Kalas.Find(data.KalaId);
+                db.Kalas.Remove(t);
                 db.SaveChanges();
                 LoadKala();
 
             }
             else if(e.ColumnIndex == dataGridView1.Columns["EditKala"].Index)
             {
-                var data = (Kala)dataGridView1.Rows[e.RowIndex].DataBoundItem;
+                var data = (KalaInfo)dataGridView1.Rows[e.RowIndex].DataBoundItem;
 
-                var form = new frmSaveKala(true, data.Id);
+                var form = new frmSaveKala(true, data.KalaId);
                 form.MdiParent = this.MdiParent;
                 form.Show();
             }

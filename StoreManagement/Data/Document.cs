@@ -24,7 +24,7 @@ namespace StoreManagement.Data
         public bool IsOutput { get; set; }
         public string Date { get; set; }
     
-        public virtual ICollection<DocumentItem> DocumentItems { get; set; }
         public virtual Store Store { get; set; }
+        public virtual ICollection<DocumentItem> DocumentItems { get; set; }
     }
 }

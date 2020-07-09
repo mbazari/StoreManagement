@@ -38,13 +38,16 @@ namespace StoreManagement
             StoreDBEntities a = new StoreDBEntities();
             var store = a.Stores.ToList();
             comboBox1.DataSource = store;
-            
 
-            Kala kala = a.Kalas.Find(id);
+            if (edit)
+            {
+                Kala kala = a.Kalas.Find(id);
 
-            textBox1.Text = kala.Id.ToString();
-            textBox2.Text = kala.Name;
-            comboBox1.SelectedValue = kala.StoreId;
+                textBox1.Text = kala.Id.ToString();
+                textBox2.Text = kala.Name;
+                comboBox1.SelectedValue = kala.StoreId;
+            }
+           
 
         }
 
@@ -70,8 +73,11 @@ namespace StoreManagement
                 Kala kala = new Kala();
                 kala.Name = textBox2.Text;
                 kala.StoreId = (int)comboBox1.SelectedValue;
+                a.Kalas.Add(kala);
                 a.SaveChanges();
             }
+
+            MessageBox.Show("تغییرات ثیت شده است.");
 
             this.Close();
         }

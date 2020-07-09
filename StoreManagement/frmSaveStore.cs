@@ -66,8 +66,11 @@ namespace StoreManagement
                 var store = new Store();
                 store.Name = textBox2.Text;
                 store.Address = richTextBox1.Text;
+                db.Stores.Add(store);
                 db.SaveChanges();
             }
+
+            MessageBox.Show("تغییرات ثیت شده است.");
 
             this.Close();
         }

@@ -58,12 +58,14 @@
             // 
             // KalaId
             // 
+            this.KalaId.DataPropertyName = "KalaId";
             this.KalaId.HeaderText = "کد کالا";
             this.KalaId.Name = "KalaId";
             this.KalaId.ReadOnly = true;
             // 
             // KalaName
             // 
+            this.KalaName.DataPropertyName = "KalaName";
             this.KalaName.HeaderText = "نام کالا";
             this.KalaName.Name = "KalaName";
             this.KalaName.ReadOnly = true;
@@ -71,6 +73,7 @@
             // 
             // StoreName
             // 
+            this.StoreName.DataPropertyName = "StoreName";
             this.StoreName.HeaderText = "نام انبار";
             this.StoreName.Name = "StoreName";
             this.StoreName.ReadOnly = true;
@@ -87,13 +90,13 @@
             this.DeleteKala.Name = "DeleteKala";
             this.DeleteKala.ReadOnly = true;
             // 
-            // ListKala
+            // frmListKala
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(647, 386);
             this.Controls.Add(this.dataGridView1);
-            this.Name = "ListKala";
+            this.Name = "frmListKala";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Text = "ListKala";
             this.Load += new System.EventHandler(this.ListKala_Load);

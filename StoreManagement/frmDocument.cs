@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.Entity;
+using System.Globalization;
 
 namespace StoreManagement
 {
@@ -59,11 +60,10 @@ namespace StoreManagement
                 {
                     label2.Text = "ورودی";
                 }
+                textBox1.Text = doc.Date;
+                textBox2.Text = doc.Id.ToString();
+                dataGridView1.DataSource = doc.DocumentItems.ToList();
             }
-
-
-           
-           
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -89,7 +89,30 @@ namespace StoreManagement
 
         private void button1_Click(object sender, EventArgs e)
         {
+            
+            var db = new StoreDBEntities();
+            var doc = new Document();
+            doc.StoreId = (int)comboBox1.SelectedValue;
 
+            var calender = new PersianCalendar();
+            var d1 = DateTime.Now;
+            doc.Date = calender.GetYear(d1).ToString() + calender.GetMonth(d1).ToString() + calender.GetDayOfMonth(d1).ToString();
+
+            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            {
+                var r = dataGridView1.Rows[i];
+                var item = new DocumentItem();
+                item.KalaId = (int)r.Cells["KalaName"].Value;
+                item.Amount = (int)r.Cells["Amount"].Value;
+                item.Description = (string)r.Cells["Description"].Value;
+
+                db.DocumentItems.Add(item);
+            }
+            db.Documents.Add(doc);
+            db.SaveChanges();
+
+            MessageBox.Show("سند ثبت شده است");
+            this.Close();
         }
     }
 }

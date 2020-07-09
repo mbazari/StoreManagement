@@ -58,18 +58,21 @@
             // 
             // StoreId
             // 
+            this.StoreId.DataPropertyName = "StoreId";
             this.StoreId.HeaderText = "کد انبار";
             this.StoreId.Name = "StoreId";
             this.StoreId.ReadOnly = true;
             // 
             // StoreName
             // 
+            this.StoreName.DataPropertyName = "StoreName";
             this.StoreName.HeaderText = "نام انبار";
             this.StoreName.Name = "StoreName";
             this.StoreName.ReadOnly = true;
             // 
             // StoreAddress
             // 
+            this.StoreAddress.DataPropertyName = "StoreAddress";
             this.StoreAddress.HeaderText = "آدرس";
             this.StoreAddress.Name = "StoreAddress";
             this.StoreAddress.ReadOnly = true;
@@ -86,13 +89,13 @@
             this.DeleteStore.Name = "DeleteStore";
             this.DeleteStore.ReadOnly = true;
             // 
-            // ListStore
+            // frmListStore
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(603, 309);
             this.Controls.Add(this.dataGridView1);
-            this.Name = "ListStore";
+            this.Name = "frmListStore";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Text = "ListStore";
             this.Load += new System.EventHandler(this.ListStore_Load);

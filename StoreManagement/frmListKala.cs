@@ -47,6 +47,7 @@ namespace StoreManagement
 
                 var form = new frmSaveKala(true, data.Id);
                 form.MdiParent = this.MdiParent;
+                form.Show();
             }
 
            
@@ -61,8 +62,15 @@ namespace StoreManagement
         {
             StoreDBEntities db = new StoreDBEntities();
 
-            dataGridView1.DataSource =db.Kalas.Select(a=> new {KalaId=a.Id,KalaName=a.Name, StoreName= a.Store.Name }).ToList();
+            dataGridView1.DataSource =db.Kalas.Select(a=> new KalaInfo { KalaId=a.Id,KalaName=a.Name, StoreName= a.Store.Name }).ToList();
             dataGridView1.Refresh();
         }
+    }
+
+    class KalaInfo
+    {
+        public int KalaId { get; set; }
+        public string KalaName { get; set; }
+        public string StoreName { get; set; }
     }
 }

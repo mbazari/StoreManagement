@@ -82,6 +82,12 @@
     <Compile Include="frmDocument.Designer.cs">
       <DependentUpon>frmDocument.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmListDocument.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmListDocument.Designer.cs">
+      <DependentUpon>frmListDocument.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmListKala.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -137,6 +143,9 @@
     </Compile>
     <EmbeddedResource Include="frmDocument.resx">
       <DependentUpon>frmDocument.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmListDocument.resx">
+      <DependentUpon>frmListDocument.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmListKala.resx">
       <DependentUpon>frmListKala.cs</DependentUpon>

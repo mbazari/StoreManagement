@@ -148,6 +148,8 @@
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmMain";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Text = "مدیریت انبار";

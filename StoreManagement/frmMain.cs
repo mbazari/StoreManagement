@@ -24,67 +24,62 @@ namespace StoreManagement
 
         private void لیستکالاToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            closeForms();
             var f = new frmListKala();
-            f.MdiParent = this;
-            f.Show();
+            ShowForm(f);
         }
 
         private void ثبتکالاToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            closeForms();
             var f = new frmSaveKala(false,0);
-            f.MdiParent = this;
-            f.Show();
+            ShowForm(f);
+
         }
 
         private void لیستانبارToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            closeForms();
             var f = new frmListStore();
-            f.MdiParent = this;
-            f.Show();
+            ShowForm(f);
         }
 
         private void ثبتانبارToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            closeForms();
+            
             var f = new frmSaveStore(false,0);
-            f.MdiParent = this;
-            f.Show();
-         
+            ShowForm(f);
         }
 
         private void ورودیToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            closeForms();
+           
             var f = new frmDocument(false,false,0);
-            f.MdiParent = this;
-            f.Show();
+            ShowForm(f);
+
         }
 
         private void خروجیToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            closeForms();
             var f = new frmDocument(true, false, 0);
-            f.MdiParent = this;
-            f.Show();
+            ShowForm(f);
         }
 
         private void لیستاسنادToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            closeForms();
             var f = new frmListDocument();
-            f.MdiParent = this;
-            f.Show();
+            ShowForm(f);
+           
         }
 
-        void closeForms()
+        void ShowForm(Form f)
         {
+            
             foreach (var item in this.MdiChildren)
             {
                 item.Close();
             }
+            f.MdiParent = this;
+            f.Show();
+            f.WindowState = FormWindowState.Maximized;
+           
         }
     }
 }

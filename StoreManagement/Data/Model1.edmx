@@ -1,0 +1,328 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="StoreDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Document">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StoreId" Type="int" Nullable="false" />
+          <Property Name="IsOutput" Type="bit" Nullable="false" />
+          <Property Name="Date" Type="nvarchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DocumentItem">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="KalaId" Type="int" Nullable="false" />
+          <Property Name="DocumentId" Type="int" Nullable="false" />
+          <Property Name="Amount" Type="int" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="Kala">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="StoreId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Store">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Address" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <Association Name="FK_Document_DocumentItem">
+          <End Role="Document" Type="Self.Document" Multiplicity="1" />
+          <End Role="DocumentItem" Type="Self.DocumentItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Document">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DocumentItem">
+              <PropertyRef Name="DocumentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Document_ToTable">
+          <End Role="Store" Type="Self.Store" Multiplicity="1" />
+          <End Role="Document" Type="Self.Document" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Store">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Document">
+              <PropertyRef Name="StoreId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Kala_DocumentItem">
+          <End Role="Kala" Type="Self.Kala" Multiplicity="1" />
+          <End Role="DocumentItem" Type="Self.DocumentItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kala">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DocumentItem">
+              <PropertyRef Name="KalaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Kala_ToTable">
+          <End Role="Store" Type="Self.Store" Multiplicity="1" />
+          <End Role="Kala" Type="Self.Kala" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Store">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Kala">
+              <PropertyRef Name="StoreId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="StoreDBModelStoreContainer">
+          <EntitySet Name="Document" EntityType="Self.Document" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DocumentItem" EntityType="Self.DocumentItem" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Kala" EntityType="Self.Kala" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Store" EntityType="Self.Store" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Document_DocumentItem" Association="Self.FK_Document_DocumentItem">
+            <End Role="Document" EntitySet="Document" />
+            <End Role="DocumentItem" EntitySet="DocumentItem" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Document_ToTable" Association="Self.FK_Document_ToTable">
+            <End Role="Store" EntitySet="Store" />
+            <End Role="Document" EntitySet="Document" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Kala_DocumentItem" Association="Self.FK_Kala_DocumentItem">
+            <End Role="Kala" EntitySet="Kala" />
+            <End Role="DocumentItem" EntitySet="DocumentItem" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Kala_ToTable" Association="Self.FK_Kala_ToTable">
+            <End Role="Store" EntitySet="Store" />
+            <End Role="Kala" EntitySet="Kala" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="StoreDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Document">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StoreId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="DocumentItems" Relationship="Self.FK_Document_DocumentItem" FromRole="Document" ToRole="DocumentItem" />
+          <NavigationProperty Name="Store" Relationship="Self.FK_Document_ToTable" FromRole="Document" ToRole="Store" />
+          <Property Name="IsOutput" Type="Boolean" Nullable="false" />
+          <Property Name="Date" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="DocumentItem">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="KalaId" Type="Int32" Nullable="false" />
+          <Property Name="DocumentId" Type="Int32" Nullable="false" />
+          <Property Name="Amount" Type="Int32" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Document" Relationship="Self.FK_Document_DocumentItem" FromRole="DocumentItem" ToRole="Document" />
+          <NavigationProperty Name="Kala" Relationship="Self.FK_Kala_DocumentItem" FromRole="DocumentItem" ToRole="Kala" />
+        </EntityType>
+        <EntityType Name="Kala">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="StoreId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="DocumentItems" Relationship="Self.FK_Kala_DocumentItem" FromRole="Kala" ToRole="DocumentItem" />
+          <NavigationProperty Name="Store" Relationship="Self.FK_Kala_ToTable" FromRole="Kala" ToRole="Store" />
+        </EntityType>
+        <EntityType Name="Store">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Address" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Documents" Relationship="Self.FK_Document_ToTable" FromRole="Store" ToRole="Document" />
+          <NavigationProperty Name="Kalas" Relationship="Self.FK_Kala_ToTable" FromRole="Store" ToRole="Kala" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <Association Name="FK_Document_DocumentItem">
+          <End Role="Document" Type="Self.Document" Multiplicity="1" />
+          <End Role="DocumentItem" Type="Self.DocumentItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Document">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DocumentItem">
+              <PropertyRef Name="DocumentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Document_ToTable">
+          <End Role="Store" Type="Self.Store" Multiplicity="1" />
+          <End Role="Document" Type="Self.Document" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Store">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Document">
+              <PropertyRef Name="StoreId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Kala_DocumentItem">
+          <End Role="Kala" Type="Self.Kala" Multiplicity="1" />
+          <End Role="DocumentItem" Type="Self.DocumentItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kala">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DocumentItem">
+              <PropertyRef Name="KalaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Kala_ToTable">
+          <End Role="Store" Type="Self.Store" Multiplicity="1" />
+          <End Role="Kala" Type="Self.Kala" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Store">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Kala">
+              <PropertyRef Name="StoreId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="StoreDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Documents" EntityType="Self.Document" />
+          <EntitySet Name="DocumentItems" EntityType="Self.DocumentItem" />
+          <EntitySet Name="Kalas" EntityType="Self.Kala" />
+          <EntitySet Name="Stores" EntityType="Self.Store" />
+          <EntitySet Name="Users" EntityType="Self.User" />
+          <AssociationSet Name="FK_Document_DocumentItem" Association="Self.FK_Document_DocumentItem">
+            <End Role="Document" EntitySet="Documents" />
+            <End Role="DocumentItem" EntitySet="DocumentItems" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Document_ToTable" Association="Self.FK_Document_ToTable">
+            <End Role="Store" EntitySet="Stores" />
+            <End Role="Document" EntitySet="Documents" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Kala_DocumentItem" Association="Self.FK_Kala_DocumentItem">
+            <End Role="Kala" EntitySet="Kalas" />
+            <End Role="DocumentItem" EntitySet="DocumentItems" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Kala_ToTable" Association="Self.FK_Kala_ToTable">
+            <End Role="Store" EntitySet="Stores" />
+            <End Role="Kala" EntitySet="Kalas" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="StoreDBModelStoreContainer" CdmEntityContainer="StoreDBEntities">
+          <EntitySetMapping Name="Documents">
+            <EntityTypeMapping TypeName="StoreDBModel.Document">
+              <MappingFragment StoreEntitySet="Document">
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="IsOutput" ColumnName="IsOutput" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="StoreId" ColumnName="StoreId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DocumentItems">
+            <EntityTypeMapping TypeName="StoreDBModel.DocumentItem">
+              <MappingFragment StoreEntitySet="DocumentItem">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="KalaId" ColumnName="KalaId" />
+                <ScalarProperty Name="DocumentId" ColumnName="DocumentId" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Kalas">
+            <EntityTypeMapping TypeName="StoreDBModel.Kala">
+              <MappingFragment StoreEntitySet="Kala">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="StoreId" ColumnName="StoreId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Stores">
+            <EntityTypeMapping TypeName="StoreDBModel.Store">
+              <MappingFragment StoreEntitySet="Store">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="StoreDBModel.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

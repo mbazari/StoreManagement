@@ -80,15 +80,17 @@
             // 
             // EditKala
             // 
-            this.EditKala.HeaderText = "ویرایش";
+            this.EditKala.HeaderText = "";
             this.EditKala.Name = "EditKala";
             this.EditKala.ReadOnly = true;
+            this.EditKala.Text = "ویرایش";
             // 
             // DeleteKala
             // 
-            this.DeleteKala.HeaderText = "حذف";
+            this.DeleteKala.HeaderText = "";
             this.DeleteKala.Name = "DeleteKala";
             this.DeleteKala.ReadOnly = true;
+            this.DeleteKala.Text = "حذف";
             // 
             // frmListKala
             // 

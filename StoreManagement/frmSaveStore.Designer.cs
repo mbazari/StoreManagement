@@ -41,7 +41,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(336, 15);
+            this.label3.Location = new System.Drawing.Point(260, 19);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(35, 13);
             this.label3.TabIndex = 11;
@@ -107,7 +107,7 @@
             this.richTextBox1.TabIndex = 13;
             this.richTextBox1.Text = "";
             // 
-            // SaveStore
+            // frmSaveStore
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -120,7 +120,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
-            this.Name = "SaveStore";
+            this.Name = "frmSaveStore";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Text = "SaveStore";
             this.Load += new System.EventHandler(this.SaveStore_Load);

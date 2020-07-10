@@ -35,12 +35,12 @@
             this.label4 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.KalaId = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.KalaId = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -114,23 +114,6 @@
             this.dataGridView1.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dataGridView1_RowsAdded);
             this.dataGridView1.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.dataGridView1_RowsRemoved);
             // 
-            // KalaId
-            // 
-            this.KalaId.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
-            this.KalaId.HeaderText = "نوع کالا";
-            this.KalaId.Name = "KalaId";
-            // 
-            // Amount
-            // 
-            this.Amount.HeaderText = "تعداد";
-            this.Amount.Name = "Amount";
-            // 
-            // Description
-            // 
-            this.Description.HeaderText = "توضیحات";
-            this.Description.Name = "Description";
-            this.Description.Width = 200;
-            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(42, 116);
@@ -157,6 +140,23 @@
             this.label5.Size = new System.Drawing.Size(43, 13);
             this.label5.TabIndex = 8;
             this.label5.Text = "کد سند:";
+            // 
+            // KalaId
+            // 
+            this.KalaId.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
+            this.KalaId.HeaderText = "نوع کالا";
+            this.KalaId.Name = "KalaId";
+            // 
+            // Amount
+            // 
+            this.Amount.HeaderText = "تعداد";
+            this.Amount.Name = "Amount";
+            // 
+            // Description
+            // 
+            this.Description.HeaderText = "توضیحات";
+            this.Description.Name = "Description";
+            this.Description.Width = 200;
             // 
             // frmDocument
             // 
@@ -192,11 +192,11 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewComboBoxColumn KalaId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Amount;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Description;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.DataGridViewComboBoxColumn KalaId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Amount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Description;
     }
 }

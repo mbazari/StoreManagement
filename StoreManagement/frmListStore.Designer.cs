@@ -79,15 +79,17 @@
             // 
             // EditStore
             // 
-            this.EditStore.HeaderText = "ویرایش";
+            this.EditStore.HeaderText = "";
             this.EditStore.Name = "EditStore";
             this.EditStore.ReadOnly = true;
+            this.EditStore.Text = "ویرایش";
             // 
             // DeleteStore
             // 
-            this.DeleteStore.HeaderText = "حذف";
+            this.DeleteStore.HeaderText = "";
             this.DeleteStore.Name = "DeleteStore";
             this.DeleteStore.ReadOnly = true;
+            this.DeleteStore.Text = "حذف";
             // 
             // frmListStore
             // 

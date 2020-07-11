@@ -41,6 +41,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.گزارشToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.لیستاسنادToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.موجودیکالاToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -124,14 +125,15 @@
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
             this.menuStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.menuStrip1.Size = new System.Drawing.Size(817, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(587, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // گزارشToolStripMenuItem
             // 
             this.گزارشToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.لیستاسنادToolStripMenuItem});
+            this.لیستاسنادToolStripMenuItem,
+            this.موجودیکالاToolStripMenuItem});
             this.گزارشToolStripMenuItem.Name = "گزارشToolStripMenuItem";
             this.گزارشToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
             this.گزارشToolStripMenuItem.Text = "گزارش";
@@ -139,9 +141,15 @@
             // لیستاسنادToolStripMenuItem
             // 
             this.لیستاسنادToolStripMenuItem.Name = "لیستاسنادToolStripMenuItem";
-            this.لیستاسنادToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
+            this.لیستاسنادToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.لیستاسنادToolStripMenuItem.Text = "لیست اسناد";
             this.لیستاسنادToolStripMenuItem.Click += new System.EventHandler(this.لیستاسنادToolStripMenuItem_Click);
+            // 
+            // موجودیکالاToolStripMenuItem
+            // 
+            this.موجودیکالاToolStripMenuItem.Name = "موجودیکالاToolStripMenuItem";
+            this.موجودیکالاToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.موجودیکالاToolStripMenuItem.Text = "موجودی کالا";
             // 
             // frmMain
             // 
@@ -149,7 +157,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(817, 667);
+            this.ClientSize = new System.Drawing.Size(587, 478);
             this.Controls.Add(this.menuStrip1);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
@@ -184,6 +192,7 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem گزارشToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem لیستاسنادToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem موجودیکالاToolStripMenuItem;
     }
 }
 

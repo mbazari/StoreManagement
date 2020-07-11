@@ -167,6 +167,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="frmSaveKala.resx">
       <DependentUpon>frmSaveKala.cs</DependentUpon>
@@ -216,6 +217,10 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\fEATURED-IMAGE1.png" />
+    <None Include="Resources\pos-shop.jpg" />
+    <None Include="Resources\pos-shop.png" />
+    <None Include="Resources\fEATURED-IMAGE.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

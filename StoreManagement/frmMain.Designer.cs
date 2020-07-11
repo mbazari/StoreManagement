@@ -28,12 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.کالاToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.لیستکالاToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ثبتکالاToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.لیستکالاToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.انبارToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.لیستانبارToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ثبتانبارToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.لیستانبارToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ثبتسندToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ورودیToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.خروجیToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -52,19 +53,19 @@
             this.کالاToolStripMenuItem.Size = new System.Drawing.Size(35, 20);
             this.کالاToolStripMenuItem.Text = "کالا";
             // 
-            // لیستکالاToolStripMenuItem
-            // 
-            this.لیستکالاToolStripMenuItem.Name = "لیستکالاToolStripMenuItem";
-            this.لیستکالاToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.لیستکالاToolStripMenuItem.Text = "لیست کالا";
-            this.لیستکالاToolStripMenuItem.Click += new System.EventHandler(this.لیستکالاToolStripMenuItem_Click);
-            // 
             // ثبتکالاToolStripMenuItem
             // 
             this.ثبتکالاToolStripMenuItem.Name = "ثبتکالاToolStripMenuItem";
-            this.ثبتکالاToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ثبتکالاToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.ثبتکالاToolStripMenuItem.Text = "ثبت کالا";
             this.ثبتکالاToolStripMenuItem.Click += new System.EventHandler(this.ثبتکالاToolStripMenuItem_Click);
+            // 
+            // لیستکالاToolStripMenuItem
+            // 
+            this.لیستکالاToolStripMenuItem.Name = "لیستکالاToolStripMenuItem";
+            this.لیستکالاToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.لیستکالاToolStripMenuItem.Text = "لیست کالا";
+            this.لیستکالاToolStripMenuItem.Click += new System.EventHandler(this.لیستکالاToolStripMenuItem_Click);
             // 
             // انبارToolStripMenuItem
             // 
@@ -75,19 +76,19 @@
             this.انبارToolStripMenuItem.Size = new System.Drawing.Size(38, 20);
             this.انبارToolStripMenuItem.Text = "انبار";
             // 
-            // لیستانبارToolStripMenuItem
-            // 
-            this.لیستانبارToolStripMenuItem.Name = "لیستانبارToolStripMenuItem";
-            this.لیستانبارToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.لیستانبارToolStripMenuItem.Text = "لیست انبار";
-            this.لیستانبارToolStripMenuItem.Click += new System.EventHandler(this.لیستانبارToolStripMenuItem_Click);
-            // 
             // ثبتانبارToolStripMenuItem
             // 
             this.ثبتانبارToolStripMenuItem.Name = "ثبتانبارToolStripMenuItem";
-            this.ثبتانبارToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ثبتانبارToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.ثبتانبارToolStripMenuItem.Text = "ثبت انبار";
             this.ثبتانبارToolStripMenuItem.Click += new System.EventHandler(this.ثبتانبارToolStripMenuItem_Click);
+            // 
+            // لیستانبارToolStripMenuItem
+            // 
+            this.لیستانبارToolStripMenuItem.Name = "لیستانبارToolStripMenuItem";
+            this.لیستانبارToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
+            this.لیستانبارToolStripMenuItem.Text = "لیست انبار";
+            this.لیستانبارToolStripMenuItem.Click += new System.EventHandler(this.لیستانبارToolStripMenuItem_Click);
             // 
             // ثبتسندToolStripMenuItem
             // 
@@ -101,14 +102,14 @@
             // ورودیToolStripMenuItem
             // 
             this.ورودیToolStripMenuItem.Name = "ورودیToolStripMenuItem";
-            this.ورودیToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ورودیToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
             this.ورودیToolStripMenuItem.Text = "ورودی";
             this.ورودیToolStripMenuItem.Click += new System.EventHandler(this.ورودیToolStripMenuItem_Click);
             // 
             // خروجیToolStripMenuItem
             // 
             this.خروجیToolStripMenuItem.Name = "خروجیToolStripMenuItem";
-            this.خروجیToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.خروجیToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
             this.خروجیToolStripMenuItem.Text = "خروجی";
             this.خروجیToolStripMenuItem.Click += new System.EventHandler(this.خروجیToolStripMenuItem_Click);
             // 
@@ -121,7 +122,9 @@
             this.گزارشToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(912, 24);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
+            this.menuStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.menuStrip1.Size = new System.Drawing.Size(817, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -136,23 +139,28 @@
             // لیستاسنادToolStripMenuItem
             // 
             this.لیستاسنادToolStripMenuItem.Name = "لیستاسنادToolStripMenuItem";
-            this.لیستاسنادToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.لیستاسنادToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
             this.لیستاسنادToolStripMenuItem.Text = "لیست اسناد";
             this.لیستاسنادToolStripMenuItem.Click += new System.EventHandler(this.لیستاسنادToolStripMenuItem_Click);
             // 
             // frmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(912, 500);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.ClientSize = new System.Drawing.Size(817, 667);
             this.Controls.Add(this.menuStrip1);
-            this.IsMdiContainer = true;
+            this.DoubleBuffered = true;
+            this.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmMain";
-            this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.RightToLeftLayout = true;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "مدیریت انبار";
             this.Load += new System.EventHandler(this.Main_Load);
             this.menuStrip1.ResumeLayout(false);

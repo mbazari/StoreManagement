@@ -26,11 +26,11 @@ namespace StoreManagement
         {
             if (edit)
             {
-                label3.Text = "ویرابش کالا";
+                label3.Text = "ویرابش انبار";
             }
             else
             {
-                label3.Text = "ثبت کالای جدید";
+                label3.Text = "ثبت انبار جدید";
             }
 
             if (edit)

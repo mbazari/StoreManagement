@@ -71,13 +71,20 @@ namespace StoreManagement
 
         void ShowForm(Form f)
         {
-            
-            foreach (var item in this.MdiChildren)
+            for (int i = 0; i < f.Controls.Count; i++)
             {
-                item.Close();
+                f.Controls[i].Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             }
-            f.MdiParent = this;
-            f.Show();
+
+            //foreach (var item in this.MdiChildren)
+            //{
+            //    item.Close();
+            //}
+            // f.MdiParent = this;
+            f.StartPosition = FormStartPosition.CenterScreen;
+            f.MaximizeBox = false;
+            
+            f.ShowDialog();
             //f.WindowState = FormWindowState.Maximized;
            
         }

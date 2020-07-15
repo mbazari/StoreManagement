@@ -97,8 +97,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(603, 309);
             this.Controls.Add(this.dataGridView1);
+            this.MaximizeBox = false;
             this.Name = "frmListStore";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ListStore";
             this.Load += new System.EventHandler(this.ListStore_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

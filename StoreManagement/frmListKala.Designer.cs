@@ -98,8 +98,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(647, 386);
             this.Controls.Add(this.dataGridView1);
+            this.MaximizeBox = false;
             this.Name = "frmListKala";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ListKala";
             this.Load += new System.EventHandler(this.ListKala_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

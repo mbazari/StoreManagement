@@ -81,8 +81,7 @@ namespace StoreManagement
             //    item.Close();
             //}
             // f.MdiParent = this;
-            f.StartPosition = FormStartPosition.CenterScreen;
-            f.MaximizeBox = false;
+            
             
             f.ShowDialog();
             //f.WindowState = FormWindowState.Maximized;

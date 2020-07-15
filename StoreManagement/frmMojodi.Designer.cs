@@ -116,8 +116,10 @@
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
+            this.MaximizeBox = false;
             this.Name = "frmMojodi";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "موجودی کالا";
             this.Load += new System.EventHandler(this.frmMojodi_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
